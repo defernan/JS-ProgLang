@@ -6,7 +6,6 @@
 
 <head>
 
-
 </head>
 
 <body>
@@ -14,6 +13,38 @@
 	<h1>JS Examples</h1>
 
 	<h2>Prototypes</h2>
+
+	<!--<script src="prototype.js"></script>-->
+	<script type="text/javascript">
+		//prototype.js
+
+		//declare function species
+		function Species () {};
+		document.writeln("Declare function species: " + Species );
+
+		//declare function human and dog
+		var Dog = Object.create(Species);
+		document.writeln("Declare Dog, Prototype of Dog: " + Object.getPrototypeOf(Dog) );
+
+		//document.writeln("Prototype of Dog: " + Object.getPrototypeOf(Dog) );
+
+		//note to add to prototype must do this vs species.kind
+		document.writeln("Declare Dog, Prototype of Dog: " + Object.getPrototypeOf(Dog) );
+
+		Species.prototype.kind = "Mammal";
+		
+		var Human = new (Species);//Object.create(Species);
+		document.writeln("Declare Human, Prototype of Human: " + Object.getPrototypeOf(Human) );
+
+		document.writeln(Human.kind);
+
+
+		
+		//document.writeln("Declare function species: " + species);
+
+
+
+	</script>
 
 
 </body>
