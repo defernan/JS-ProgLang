@@ -44,18 +44,23 @@
 		Human.prototype = new Mammal();
 		Human.prototype.kind = "Human";
 		var human =  new Human();
-	</script>
-	<h3>Declare Functions</h3>
-	<script type="text/javascript">
-		document.writeln("Declare function Species: " + Species );
-		document.writeln("Declare function Mammal: " + Mammal );
-		document.writeln("Declare function Human: " + Human );
-	</script>
-	<h3>Create Inheritance Chain</h3>
-	<script type="text/javascript">
-		document.writeln("Objects' kind property: species- " + species.kind + " mammal- " + mammal.kind + " human- " + human.kind);
-		document.writeln("Objects' bloodType property: species- " + species.bloodType + " mammal- " + mammal.bloodType + " human- " + human.bloodType);
-		document.writeln("Objects' drivesCar property: species- " + species.drivesCar + " mammal- " + mammal.drivesCar + " human- " + human.drivesCar);
+
+		/*************************************************************************
+		* PRINT DATA
+		**************************************************************************/
+		//header
+		document.write("<h3>Declare Functions</h3>");
+		//show functions
+		document.write("<p>Declare function Species: " + Species + "</p>");
+		document.write("<p>Declare function Mammal: " + Mammal +"</p>");
+		document.write("Declare function Human: " + Human );
+
+		//header
+		document.write("<h3>Create Inheritance Chain and Change Prototype Properties</h3>");
+		//show properties
+		document.write("<p>Objects' kind property: species- " + species.kind + " mammal- " + mammal.kind + " human- " + human.kind + "</p>");
+		document.write("<p>Objects' bloodType property: species- " + species.bloodType + " mammal- " + mammal.bloodType + " human- " + human.bloodType + "</p>");
+		document.write("Objects' drivesCar property: species- " + species.drivesCar + " mammal- " + mammal.drivesCar + " human- " + human.drivesCar);
 
 	</script>
 
