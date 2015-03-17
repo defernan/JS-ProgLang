@@ -11,13 +11,11 @@
 <body>
 
 	<h1>JS Examples</h1>
-
+	<!---
+	PROTOTYPES
+	-->
 	<h2>Prototypes</h2>
-
-	<!--<script src="prototype.js"></script>-->
 	<script type="text/javascript">
-		//prototype.js
-
 		/*************************************************************************
 		* SPECIES
 		**************************************************************************/		
@@ -34,7 +32,6 @@
 		Mammal.prototype = new Species();
 		Mammal.prototype.kind = "Mammal";
 		var mammal = new Mammal();
-
 		/*************************************************************************
 		* HUMAN
 		**************************************************************************/		
@@ -44,7 +41,6 @@
 		Human.prototype = new Mammal();
 		Human.prototype.kind = "Human";
 		var human =  new Human();
-
 		/*************************************************************************
 		* PRINT DATA
 		**************************************************************************/
@@ -61,9 +57,46 @@
 		document.write("<p>Objects' kind property: species- " + species.kind + " mammal- " + mammal.kind + " human- " + human.kind + "</p>");
 		document.write("<p>Objects' bloodType property: species- " + species.bloodType + " mammal- " + mammal.bloodType + " human- " + human.bloodType + "</p>");
 		document.write("Objects' drivesCar property: species- " + species.drivesCar + " mammal- " + mammal.drivesCar + " human- " + human.drivesCar);
-
 	</script>
+	<!---
+	CLOSURES
+	-->
+	<h2>Closures</h2>
+	<script type="text/javascript">
 
+		function showName(firstname, lastname){
+		  var intro = "Your name is: ";
+		  return function() {
+		    var space = " ";
+		    return intro + firstname + space + lastname;
+		  };
+		}
+
+		var test = showName("Linus", "Torvol")
+		document.writeln("<p>" + test() + "</p>");
+
+		function newPerson(name, age){
+		  var privateName = name;
+		  var privateAge = age;
+		  return {
+		    sayName: function(){
+		      return ("Hello, my name is " + privateName);
+		    },
+		    sayAge: function(){
+		      return ("I am " + privateAge + " years old.")
+		    },
+		    setAge: function(age){
+		      privateAge = age;
+		    }
+		  }
+		};
+
+		var person = newPerson("Katie", 20);
+		document.writeln("<p>" + person.sayName() + "</p>");
+		document.writeln("<p>" + person.sayAge() + "</p>");
+		person.setAge(21);
+		document.writeln("I just had a birthday, now " + person.sayAge());
+	</script>
 
 </body>
 
